@@ -4,6 +4,7 @@ FROM ubuntu:18.04
 LABEL maintainer="tomer.klein@gmail.com"
 
 ENV PYTHONIOENCODING=utf-8
+ENV LANG=C.UTF-8
 
 #install pip3
 RUN apt update
