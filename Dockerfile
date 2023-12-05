@@ -14,9 +14,8 @@ RUN apt install -yqq python3-pip && \
     apt install -yqq fping && \
     apt install -yqq libssl-dev
 
-RUN pip3 install --upgrade pip setuptools  --no-cache-dir && \
-    pip3 install flask --no-cache-dir && \
-    pip3 install flask_restful --no-cache-dir && \ 
-    pip3 install loguru --no-cache-dir && \
-    pip3 install requests --no-cache-dir && \
-    pip3 install cryptography==2.6.1 --no-cache-dir
+RUN pip3 install --upgrade pip setuptools  --no-cache-dir
+
+COPY requirements.txt /tmp
+
+RUN pip3 install -r /tmp/requirements.txt
