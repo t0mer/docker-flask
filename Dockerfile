@@ -14,8 +14,8 @@ RUN apt install -yqq python3-pip && \
     apt install -yqq fping && \
     apt install -yqq libssl-dev
 
-RUN pip3 install --upgrade --break-system-packages pip setuptools   --no-cache-dir
+RUN pip3 install --upgrade  pip setuptools --break-system-packages
 
 COPY requirements.txt /tmp
 
-RUN pip3 install -r --break-system-packages /tmp/requirements.txt 
+RUN pip3 install -r /tmp/requirements.txt --break-system-packages
